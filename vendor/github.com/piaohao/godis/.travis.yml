@@ -1,0 +1,37 @@
+language: go
+
+go:
+  - "1.12.x"
+
+branches:
+  only:
+    - master
+
+env:
+  - GO111MODULE=on
+
+services:
+  - docker
+  - redis-server
+
+addons:
+  hosts:
+  - local
+
+before_install:
+  - pwd
+
+install:
+  - cat /etc/hosts
+
+script:
+  - docker run --rm -it -d -p 7000-7005:7000-7005 --net=host areyouok/redis-cluster
+  - sleep 10
+  - GOARCH=amd64 go test -v ./... -race -coverprofile=coverage.txt -covermode=atomic
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+
+
+

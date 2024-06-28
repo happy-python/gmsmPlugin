@@ -1,0 +1,13 @@
+# github.com/jolestar/go-commons-pool v2.0.0+incompatible
+## explicit
+github.com/jolestar/go-commons-pool
+github.com/jolestar/go-commons-pool/collections
+github.com/jolestar/go-commons-pool/concurrent
+# github.com/piaohao/godis v0.0.18
+## explicit
+github.com/piaohao/godis
+# github.com/stretchr/testify v1.8.4
+## explicit; go 1.20
+# github.com/tjfoc/gmsm v1.4.1
+## explicit; go 1.14
+github.com/tjfoc/gmsm/sm3
